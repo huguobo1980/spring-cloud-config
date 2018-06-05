@@ -1,7 +1,7 @@
- spring:
-  application:
-    name: account-trade
-  datasource:
+spring:
+   application:
+     name: account-trade
+   datasource:
     name: account-check-ds
     url: jdbc:oracle:thin:@172.30.0.242:1520:oradb01
     username: account_trade
@@ -22,7 +22,7 @@
     testOnReturn: false
     poolPreparedStatements: true
     maxPoolPreparedStatementPerConnectionSize: 20    
-  http:
+   http:
     encoding:
       force: true
       charset: UTF-8
@@ -36,11 +36,11 @@
 #    enabled: true
 
 eureka:
-  instance:
+   instance:
      hostname: ${spring.cloud.client.ipAddress}
      preferIpAddress: true
      instance-id: ${spring.cloud.client.ipAddress}:${server.port} 
-  client:
+   client:
     serviceUrl:
       defaultZone: http://localhost:7777/eureka/
     #use-dns-for-fetching-service-urls: true
