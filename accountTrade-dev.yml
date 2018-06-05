@@ -1,3 +1,2 @@
-spring:
-  application:
-    name: accountTrade
+main:
+   url:http://localhost:5555/hi
