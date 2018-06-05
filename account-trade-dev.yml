@@ -1,0 +1,82 @@
+ spring:
+  application:
+    name: account-trade
+  datasource:
+    name: account-check-ds
+    url: jdbc:oracle:thin:@172.30.0.242:1520:oradb01
+    username: account_trade
+    password: account_trade
+    #使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: oracle.jdbc.driver.OracleDriver
+    filters: stat
+    maxActive: 10
+    initialSize: 2
+    maxWait: 60000
+    minIdle: 2
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x' FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20    
+  http:
+    encoding:
+      force: true
+      charset: UTF-8
+
+#endpoints:
+#  shutdown:
+#    enabled: true
+#  restart:
+#    enabled: true
+#  refresh:
+#    enabled: true
+
+eureka:
+  instance:
+     hostname: ${spring.cloud.client.ipAddress}
+     preferIpAddress: true
+     instance-id: ${spring.cloud.client.ipAddress}:${server.port} 
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:7777/eureka/
+    #use-dns-for-fetching-service-urls: true
+    #prefer-same-zone-eureka: true
+    #eureka-server-d-n-s-name: sc-bss.iboxpay.com
+    #eureka-server-port: 9090
+    #eureka-server-u-r-l-context: eureka
+    #region: eureka-zone-1  
+  
+logging:
+  config: classpath:logback_spring.xml
+  file: D:/logs/account_trade
+  level:
+    org.springframework.aop.framework.CglibAopProxy: ERROR
+    com.netflix.config.sources.URLConfigurationSource: ERROR
+    org.springframework.cloud.starter.eureka.EurekaStarterDeprecationWarningAutoConfiguration: ERROR
+    com.iboxpay.account: DEBUG
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %5p %logger{36}:%line - %m%n"
+    
+    
+#访问账务核算系统的URL配置
+accCheck:
+   mainUrl: http://localhost:9999/accCheck
+   accountDaySettleStatus: /config/getAccountDaySettleStatus/
+   subjectInfo: /config/getSubjectInfo/
+   innerAccountIdByBankAccount: /config/getInnerAccountIdByBankAccount/
+   innerAccountIdByChannelNo: /config/getInnerAccountIdByChannelNo/
+   
+#接口访问并发数
+service:
+  access-max-count: 200
+
+#线程池配置  
+thread:
+  pool:
+    initSize: 50
+    maxSize: 100
+    waitQueueSize: 1000  
