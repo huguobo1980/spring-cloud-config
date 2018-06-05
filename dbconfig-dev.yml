@@ -1,9 +1,5 @@
 accCheck:
    mainUrl: http://localhost:9999/accCheck
-   accountDaySettleStatus: /config/getAccountDaySettleStatus/
-   subjectInfo: /config/getSubjectInfo/
-   innerAccountIdByBankAccount: /config/getInnerAccountIdByBankAccount/
-   innerAccountIdByChannelNo: /config/getInnerAccountIdByChannelNo/
    
 #接口访问并发数
 service:
