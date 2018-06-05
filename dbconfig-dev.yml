@@ -1,11 +1,3 @@
-#访问账务核算系统的URL配置
-accCheck:
-   mainUrl: http://localhost:9999/accCheck
-   accountDaySettleStatus: /config/getAccountDaySettleStatus/
-   subjectInfo: /config/getSubjectInfo/
-   innerAccountIdByBankAccount: /config/getInnerAccountIdByBankAccount/
-   innerAccountIdByChannelNo: /config/getInnerAccountIdByChannelNo/
-   
 #接口访问并发数
 service:
   access-max-count: 200
