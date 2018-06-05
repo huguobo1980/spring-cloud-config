@@ -1,3 +1,6 @@
+accCheck:
+   mainUrl: http://localhost:9999/accCheck
+   
 #接口访问并发数
 service:
   access-max-count: 200
