@@ -6,7 +6,6 @@
     url: jdbc:oracle:thin:@172.30.0.242:1520:oradb01
     username: account_trade
     password: account_trade
-    #使用druid数据源
     type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: oracle.jdbc.driver.OracleDriver
     filters: stat
@@ -61,8 +60,6 @@ logging:
   pattern:
     file: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %5p %logger{36}:%line - %m%n"
     
-    
-#访问账务核算系统的URL配置
 accCheck:
    mainUrl: http://localhost:9999/accCheck
    accountDaySettleStatus: /config/getAccountDaySettleStatus/
@@ -70,11 +67,9 @@ accCheck:
    innerAccountIdByBankAccount: /config/getInnerAccountIdByBankAccount/
    innerAccountIdByChannelNo: /config/getInnerAccountIdByChannelNo/
    
-#接口访问并发数
 service:
   access-max-count: 200
 
-#线程池配置  
 thread:
   pool:
     initSize: 50
