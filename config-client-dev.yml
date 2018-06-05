@@ -1,2 +1,2 @@
 main:
-  url: http://localhost:5555/hi
+  url: http://dev:5555/hi
