@@ -1,7 +1,3 @@
-accCheck:
-   mainUrl: http://localhost:9999/accCheck
-service:
-  access-max-count: 200
 thread:
   pool:
     initSize: 50
