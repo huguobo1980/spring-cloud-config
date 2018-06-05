@@ -1,2 +1,7 @@
 main:
   url: 123456789
+thread:
+  pool:
+    initSize: 50
+    maxSize: 100
+    waitQueueSize: 1000 
